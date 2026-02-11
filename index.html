@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIT55 - Truth Is Not Abstract</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --truth-bg:#ffffff; --truth-text:#000000;
+  --moved-bg:#1a1a1a; --moved-text:#e0e0e0;
+  --bigbox-bg:#2a3f5f; --bigbox-text:#c8d5e3;
+  --sticker-bg:#4a2c2a; --sticker-text:#e8d4cc;
+  --gambler-bg:#3d2f2f; --gambler-text:#d4c4c4;
+  --shell-bg:#1f2b1f; --shell-text:#c8d4c8;
+  --loadbearing-bg:#0f1419; --loadbearing-text:#e8eaed;
+  --unit-bg:#ffffff; --unit-text:#000000;
+  --line-bg:#f8f8f8; --line-text:#1a1a1a;
+  --after-bg:#ffffff; --after-text:#2a2a2a;
+  --close-bg:#ffffff; --close-text:#000000;
+}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,'Inter','Helvetica Neue',Arial,sans-serif;
+  line-height:1.7;
+  background:var(--truth-bg);
+  color:var(--truth-text);
+  transition:background-color .6s ease,color .6s ease;
+}
+
+.header{
+  max-width:900px;
+  margin:0 auto;
+  padding:32px 0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo img{height:32px}
+
+.contact{
+  display:flex;
+  gap:32px;
+  font-size:13px;
+  font-weight:500;
+}
+
+.contact a{color:inherit;text-decoration:none}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 0 80px;
+}
+
+section{
+  margin-bottom:80px;
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity 1s ease,transform 1s ease;
+}
+
+section.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h1{
+  font-size:48px;
+  font-weight:800;
+  letter-spacing:-.03em;
+  margin-bottom:40px;
+  line-height:1.1;
+}
+
+h2{
+  font-size:32px;
+  font-weight:700;
+  letter-spacing:-.02em;
+  margin-bottom:32px;
+}
+
+p{
+  margin-bottom:24px;
+  font-size:17px;
+  max-width:720px;
+}
+
+.divider{
+  height:1px;
+  background:currentColor;
+  opacity:.2;
+  margin:60px 0;
+  max-width:200px;
+}
+
+.vulture-section{margin-top:60px}
+
+.footer{
+  max-width:900px;
+  margin:0 auto;
+  padding:40px 0;
+  text-align:center;
+  font-size:14px;
+  font-weight:500;
+  border-top:1px solid rgba(0,0,0,.05);
+}
+
+.footer.dark{border-top:1px solid rgba(255,255,255,.1)}
+
+@media(max-width:768px){
+  .header{flex-direction:column;gap:16px;padding:20px}
+  .contact{flex-direction:column;gap:12px}
+  .container{padding:32px 24px 60px}
+  h1{font-size:36px}
+  h2{font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo">
+    <img alt="KIT55"
+      src="data:image/svg+xml;utf8,
+      <svg xmlns='http://www.w3.org/2000/svg' width='160' height='40'>
+        <rect width='160' height='40' fill='white'/>
+        <text x='0' y='30' font-size='28' font-family='Arial Black,Arial' fill='black'>KIT55</text>
+      </svg>">
+  </div>
+  <div class="contact">
+    <a href="tel:+18587442700">+1 858 744 2700</a>
+    <a href="mailto:welcome@mykit55.com">welcome@mykit55.com</a>
+  </div>
+</div>
+
+<div class="container">
+
+<section id="truth" data-bg="truth">
+<h1>TRUTH IS NOT ABSTRACT</h1>
+<p>Most failures don't come from bad intent.<br>
+They come from distance.<br>
+From decisions made far from the work.<br>
+From risk diluted across committees.<br>
+From accountability softened until it belongs to no one.</p>
+<p>On paper, everything looks reasonable.<br>
+In reality, someone pays.</p>
+<p>Truth isn't a philosophy.<br>
+It isn't a promise.<br>
+It isn't a slide deck or a spreadsheet justification.</p>
+<p>Truth shows up.<br>
+It shows up in a door slab that fits the opening.<br>
+In hardware that arrives with the correct handing.<br>
+In a kit that opens clean instead of triggering a cascade of phone calls, apologies, and favors owed.</p>
+<p>Truth is what's there.<br>
+And what isn't.</p>
+<p>If you've been told this is "just how the industry works"—<br>
+that delays are normal, substitutions are equivalent,<br>
+that someone else dropped the ball—<br>
+that story only survives at a distance.</p>
+<p>Because the moment you stand close enough to the work,<br>
+abstraction collapses.</p>
+<p>And you realize the "small mistake" you swept under the rug didn't stay small.<br>
+It metastasized into lost openings, delayed revenue, and consequences no spreadsheet ever volunteered to show you.</p>
+<p>Once you see that,<br>
+continuing as before stops being ignorance.<br>
+It becomes a choice.</p>
+<div class="divider"></div>
+</section>
+
+<section id="moved" data-bg="moved">
+<h2>THE WORLD MOVED</h2>
+<p>This isn't about bad actors.<br>It's about gravity.</p>
+<p>The world no longer changes in cycles.<br>It lurches.</p>
+<p>Tariffs shift overnight.<br>Borders close without warning.<br>Ports stall.<br>Weather reroutes supply.<br>One sentence from one leader turns into six months of friction on the ground.</p>
+<p>Under these conditions, nothing "takes care of itself."</p>
+<p>The clock is no longer ticking.<br>The cadence is dead.</p>
+<p>What used to feel like lead time<br>was really borrowed luck.</p>
+<p>Systems built on distance, delay, and optimism don't bend anymore.<br>They fracture.</p>
+<p>What used to be a tolerable inefficiency<br>is now a compounding liability.</p>
+<p>Forecasting is now just creative writing.<br>It describes what should have happened —<br>not what will.</p>
+<p>Explanations don't move material.<br>They don't reopen ports.<br>They don't recover lost openings or repair broken timelines.</p>
+<p>In this environment, passivity is no longer neutral.<br>It's a line-item expense.</p>
+<p>Either someone is actively on top of the work —<br>or the cost surfaces elsewhere, later, and larger.</p>
+<p>This isn't volatility as an exception.<br>This is volatility as the baseline.</p>
+<p>And any model that depends on hope, distance, or someone else absorbing the impact<br>is already obsolete.</p>
+</section>
+
+<section id="vultures" data-bg="bigbox">
+<h1>THE VULTURES</h1>
+<p>This system didn't break by accident.<br>It was optimized.</p>
+<p>When pressure rises, certain models don't suffer.<br>They feed.</p>
+<p>They don't solve chaos.<br>They convert it.</p>
+<p>And while there are good operators scattered throughout this industry — there always are — these models persist because they are rewarded, protected, and quietly normalized.</p>
+<p>You've met them.</p>
+<div class="divider"></div>
+
+<div class="vulture-section">
+<h2>THE BIG BOX</h2>
+<p>They trade accountability for scale.</p>
+<p>When something goes wrong, no one decides.<br>A policy does.</p>
+<p>Problems are routed into call centers.<br>Outcomes are justified by procedure.<br>Distance becomes insulation.</p>
+<p>Pressure doesn't disappear — it's reclassified.</p>
+<p>Internal inventory debt is cleared by kitting it onto your project site.<br>Pink sheets arrive in the morning.<br>Your job absorbs their quarter-end reconciliation.</p>
+<p>When it fails, no one is reachable.<br>Only explainable.</p>
+<p>Operationally broken.<br>Legally defensible.</p>
+<p>If you're looking for the argument that cost you the job,<br>it's in the fine print.</p>
+<div class="divider"></div>
+</div>
+
+<div class="vulture-section" data-bg="sticker">
+<h2>THE STICKER BRAND</h2>
+<p>They sell appearance as control.</p>
+<p>Take a standard product.<br>Add a logo.<br>Print a brochure.<br>Raise the price.<br>Call it "curated."</p>
+<p>Nothing changes operationally.<br>There is no depth.<br>No repeatability.<br>No leverage over the factory that actually makes the thing.</p>
+<p>You don't buy a system.<br>You buy a story.</p>
+<p>And when it fails, no one can fix it —<br>because no one ever owned it.</p>
+<p>You didn't pay for accountability.<br>You paid for branding.</p>
+<div class="divider"></div>
+</div>
+
+<div class="vulture-section" data-bg="gambler">
+<h2>THE AESTHETIC GAMBLER</h2>
+<p>They aren't gamblers.<br>They're mathematicians.</p>
+<p>They know where break-even sits before the RFQ is finished.<br>They know how much has to land cleanly for the job to pencil.</p>
+<p>Everything beyond that is optional.</p>
+<p>Perfect samples.<br>Perfect lighting.<br>Outcomes that cannot be repeated, framed as expertise.</p>
+<p>Once margin is secured, correction stops making sense.</p>
+<p>Short runs don't get fixed.<br>Replacements don't pencil.</p>
+<p>They don't fail loudly.<br>They amortize the damage.</p>
+<p>Your project wasn't unfinished —<br>it was fully priced.</p>
+<div class="divider"></div>
+</div>
+
+<div class="vulture-section" data-bg="shell">
+<h2>THE DISTANT SHELL</h2>
+<p>They sell price through distance.</p>
+<p>Time zones replace presence.<br>Lead times replace accountability.</p>
+<p>You're flown thousands of miles to see the best version of the operation.<br>The line is immaculate.<br>The samples are flawless.</p>
+<p>That version never ships.</p>
+<p>When reality arrives, correction is impossible.<br>And when the hardware fails, distance finishes the job.</p>
+<p>No leverage.<br>No remedy.<br>No explanation.</p>
+<p>You didn't buy a product.<br>You bought a ghost.</p>
+<div class="divider"></div>
+</div>
+
+<p>None of these models exist because people are stupid or malicious.<br>Many are run by capable operators doing exactly what the system rewards.</p>
+<p>That doesn't make the outcomes accidental.<br>It makes them inevitable.</p>
+<p>These models all work the same way:<br>They promise outcomes.<br>They avoid presence.<br>They disappear when pressure arrives.</p>
+<p>They don't fear volatility.<br>They hide inside it.</p>
+<p>And the more unstable the world becomes,<br>the better they get at not being there when it matters.</p>
+</section>
+
+<section id="loadbearing" data-bg="loadbearing">
+<h1>THE LOAD-BEARING MODEL</h1>
+<p>Let's be clear about one thing:<br>This work is not frictionless.</p>
+<p>Anyone promising that is lying to you.</p>
+<p>Reality is messy.<br>Sites are imperfect.<br>Timelines compress.<br>Assumptions collide with the physical world.</p>
+<p>The difference isn't whether friction appears.<br>It's where it lands.</p>
+<p>Most systems are designed to route responsibility away from the point of failure.<br>Into policies.<br>Into disclaimers.<br>Into someone else's inbox.</p>
+<p>That language is familiar:<br>"It's out of my hands."<br>"That's not in our scope."<br>"We followed procedure."</p>
+<p>We don't operate that way.</p>
+<p>If we are the point of contact, we are the point of authority.</p>
+<p>Accountability is not routed.<br>It is held.</p>
+<p>Our value does not end when a shipment leaves a dock.<br>That's where it begins.</p>
+<p>Perfect samples always meet imperfect sites.<br>That moment is not an exception — it is the job.</p>
+<p>The vulture model prices for delivery.<br>This model prices for resolution.</p>
+<p>We are brand-agnostic by design.<br>No mystery.<br>No sticker logic.</p>
+<p>Components are disclosed.<br>Sources are verified.<br>Specifications are explicit.</p>
+<p>Nothing moves forward until it has been checked, marked, and signed by leadership on both sides.</p>
+<p>Distance is not efficiency.<br>It is a hidden cost.</p>
+<p>A lower upfront number from a distant shell is not savings —<br>it is a high-interest loan you repay in delays, rework, and unfixable failures.</p>
+<p>We choose proximity over price.<br>Presence over insulation.</p>
+<p>Skin in the game is not a slogan here.<br>It is structural.</p>
+<p>Margin is not fully realized until the project is fully closed.<br>If the work isn't finished, the job is not fully priced.</p>
+<p>When pressure rises, we don't disappear.<br>We close distance.</p>
+<p>Communication increases.<br>Presence increases.<br>Authority concentrates instead of fracturing.</p>
+<p>No ghosts.<br>No silence.<br>No policy shields.</p>
+<p>This model is not optimized for speed at all costs.<br>It is optimized for completion without excuses.</p>
+<p>And it asks an uncomfortable question of every procurement team:<br>Are you buying the lowest number today —<br>or the insurance policy against the cost of failure tomorrow?</p>
+</section>
+
+<section id="unit" data-bg="unit">
+<h1>THE UNIT</h1>
+<p>All of this complexity collapses to one question:<br>Did everything arrive —<br>or didn't it?</p>
+<p>Not intent.<br>Not effort.<br>Not explanations.</p>
+<p>Reality needs a unit.</p>
+<p>Here, that unit is the kit.</p>
+<p>Not as a concept.<br>Not as a SKU.<br>As a binary outcome.</p>
+<p>A kit is either whole —<br>or it proves exactly where the system failed.</p>
+<p>Every component specified is present.<br>Door slabs.<br>Hardware.<br>Fasteners.<br>Fixtures.<br>Finishes.<br>Checked.<br>Marked.<br>Accounted for.</p>
+<p>When the call comes for a floor, a wing, or a phase,<br>that unit arrives complete.</p>
+<p>Labeled by room.<br>Staged by sequence.<br>Ready to install.</p>
+<p>There is no partial credit.</p>
+<p>If something is missing, the kit does not hide it.<br>It exposes it.<br>Immediately.<br>Unarguably.</p>
+<p>That is the point.</p>
+<p>Because abstraction survives in aggregates.<br>Truth survives in units.</p>
+<p>A kit cannot be negotiated after the fact.<br>It cannot be explained away.<br>It cannot be rerouted into policy language.</p>
+<p>Either it opens clean —<br>or it indicts the process that produced it.</p>
+<p>That is why the kit exists.<br>Not to make things feel easier —<br>but to make failure impossible to hide.</p>
+<p>This is where the fighting stops.</p>
+<p>Design, procurement, logistics, installation —<br>all of it resolves here.</p>
+<p>One unit.<br>One standard.<br>One shared reality.</p>
+<p>No more finger-pointing.<br>No more "it shipped."<br>No more "it should have been there."</p>
+<p>The kit is the truth everyone stands in front of together.</p>
+<p>And once that truth is visible,<br>coordination replaces conflict.</p>
+<p>The work stops being adversarial.<br>The noise drops out.<br>The room gets quiet.</p>
+<p>Because everyone can finally see the same thing.</p>
+</section>
+
+<section id="line" data-bg="line">
+<h2>THE LINE</h2>
+<p>This model isn't extreme.<br>It's corrective.</p>
+<p>There's nothing heroic about it.<br>No martyrdom.<br>No cape.</p>
+<p>This is simply how work should be done when outcomes matter —<br>and hasn't been.</p>
+<p>Being present when friction appears isn't exceptional.<br>It's the job.</p>
+<p>Standing in the gap at 3:00 a.m. during force majeure isn't sacrifice.<br>It's what responsibility costs when it's real.</p>
+<p>This model doesn't glorify pressure.<br>It contains it.</p>
+<p>And it isn't rigid.</p>
+<p>The unit is precise, not brittle.</p>
+<p>Binary measurement doesn't prevent adaptation —<br>it makes adaptation possible.</p>
+<p>Because when reality shifts,<br>you can only pivot if you know exactly what's whole<br>and exactly what isn't.</p>
+<p>Scalability doesn't come from abstraction here.<br>It comes from authority.</p>
+<p>From decisions that don't ricochet through committees.<br>From accountability that doesn't fracture under load.<br>From systems designed to move with reality, not explain it after the fact.</p>
+<p>That means this way of working isn't for everyone.</p>
+<p>Not because it's heavy —<br>but because it's explicit.</p>
+<p>Some teams prefer flexibility without inspection.<br>Optionality without consequence.<br>Speed without ownership.</p>
+<p>That isn't wrong.<br>It's just incompatible.</p>
+<p>A clean no still matters.<br>It saves time.<br>It saves trust.</p>
+<p>Because once the work begins,<br>participation isn't conditional.</p>
+<p>Not for us.<br>Not for you.</p>
+<p>If you want certainty without responsibility,<br>this won't work.</p>
+<p>If you want adaptability without accountability,<br>this won't work.</p>
+<p>But if you believe this is how work should be done —<br>measured, owned, and adjusted in real time —<br>then this won't feel radical.</p>
+<p>It will feel overdue.</p>
+</section>
+
+<section id="after" data-bg="after">
+<h2>WHAT HOLDS AFTER</h2>
+<p>This doesn't replace anyone.<br>It restores them.</p>
+<p>Architects get to design — instead of defending substitutions they never chose.<br>
+Designers get to specify — without watching intent erode downstream.<br>
+Project managers get to lead — instead of absorbing noise and translating blame.<br>
+Procurement gets to procure — with clarity instead of quiet risk transfer.<br>
+General contractors get to walk into meetings with real information — not spin.</p>
+<p>Nothing here removes responsibility.<br>It returns it to where it belongs.</p>
+<p>When truth is visible, roles stop bleeding into each other.<br>
+People stop compensating for systems that won't tell the truth about themselves.</p>
+<p>The work gets quieter.</p>
+<p>Not because nothing goes wrong —<br>but because when it does, everyone can see it at the same time.</p>
+<p>Bad news doesn't disappear here.<br>It arrives earlier.<br>Cleaner.<br>With fewer fingerprints on it.</p>
+<p>That changes the tone of everything.</p>
+<p>Meetings stop being theater.<br>Decisions stop being defensive.<br>People stop carrying problems they didn't create.</p>
+<p>This isn't perfection.<br>It's credibility.</p>
+<p>And credibility compounds.</p>
+<p>Because when each person is allowed to do what they do best —<br>
+and the system stops asking them to cover for what it can't explain —<br>
+the work stops feeling adversarial.</p>
+<p>That's the legacy.</p>
+<p>Not a brand.<br>Not a methodology.<br>Not a personality.</p>
+<p>A return to cohesion.<br>To normalcy.<br>
+To work that can be done at a high level without grinding people down.</p>
+<p>This is why it's worth choosing.</p>
+<p>Not because it's easier —<br>
+but because it brings out the best in people<br>
+and gives that effort somewhere honest to land.</p>
+</section>
+
+<section id="close" data-bg="close">
+<h1>THE CLOSE</h1>
+<p>Nothing here is hypothetical.</p>
+<p>This model either works —<br>or it exposes exactly where reality breaks.</p>
+<p>There is no story to hide behind.<br>No abstraction to soften the outcome.<br>No one else to absorb the weight.</p>
+<p>That is the agreement.</p>
+<p>We don't promise ease.<br>We don't promise perfection.</p>
+<p>We promise presence.<br>We promise accountability.<br>We promise to stay until the system is whole again.</p>
+<p>When you're ready to stop feeding systems that protect themselves —<br>
+when you're ready to stand in front of the work without excuses —<br>
+you know how to find us.</p>
+<p>What's harder to answer is this:</p>
+<p>Have we become so accustomed to dysfunction<br>
+that the idea of doing this right feels unrealistic?</p>
+<p>Or is that just what we tell ourselves<br>
+after living too long without a real alternative?</p>
+
+<img alt="55 — this passed" style="display:block;margin:80px auto 0;width:120px;opacity:.85"
+src="data:image/svg+xml;utf8,
+<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>
+<circle cx='100' cy='100' r='90' fill='none' stroke='black' stroke-width='12'/>
+<text x='50%' y='58%' text-anchor='middle' font-size='96' font-family='Arial Black,Arial' fill='black'>55</text>
+</svg>">
+</section>
+
+</div>
+
+<div class="footer">
+  <div class="contact">
+    <a href="tel:+18587442700">+1 858 744 2700</a>
+    <a href="mailto:welcome@mykit55.com">welcome@mykit55.com</a>
+  </div>
+</div>
+
+<script>
+const body=document.body;
+const footer=document.querySelector('.footer');
+const sections=[...document.querySelectorAll('section'),...document.querySelectorAll('.vulture-section[data-bg]')];
+const colors={
+ truth:{bg:'#ffffff',text:'#000000',dark:false},
+ moved:{bg:'#1a1a1a',text:'#e0e0e0',dark:true},
+ bigbox:{bg:'#2a3f5f',text:'#c8d5e3',dark:true},
+ sticker:{bg:'#4a2c2a',text:'#e8d4cc',dark:true},
+ gambler:{bg:'#3d2f2f',text:'#d4c4c4',dark:true},
+ shell:{bg:'#1f2b1f',text:'#c8d4c8',dark:true},
+ loadbearing:{bg:'#0f1419',text:'#e8eaed',dark:true},
+ unit:{bg:'#ffffff',text:'#000000',dark:false},
+ line:{bg:'#f8f8f8',text:'#1a1a1a',dark:false},
+ after:{bg:'#ffffff',text:'#2a2a2a',dark:false},
+ close:{bg:'#ffffff',text:'#000000',dark:false}
+};
+let active=null;
+function update(){
+ let best=null,dist=Infinity,mid=innerHeight/2;
+ sections.forEach(s=>{
+  const r=s.getBoundingClientRect();
+  if(r.bottom<0||r.top>innerHeight)return;
+  s.classList.add('visible');
+  const d=Math.abs(r.top+r.height/2-mid);
+  if(d<dist){dist=d;best=s;}
+ });
+ if(!best)return;
+ const k=best.dataset.bg;
+ if(!k||k===active)return;
+ active=k;
+ const c=colors[k];
+ body.style.backgroundColor=c.bg;
+ body.style.color=c.text;
+ footer.classList.toggle('dark',c.dark);
+}
+addEventListener('scroll',update);
+addEventListener('resize',update);
+addEventListener('load',update);
+</script>
+
+</body>
+</html>
