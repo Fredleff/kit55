@@ -30,10 +30,11 @@ body{
   transition:background-color .6s ease,color .6s ease;
 }
 
+/* Updated Header: Now matches the width of the text blocks (720px) */
 .header{
-  max-width:900px;
+  max-width:720px; 
   margin:0 auto;
-  padding:32px 0;
+  padding:48px 0;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -51,13 +52,13 @@ body{
 .contact a{color:inherit;text-decoration:none}
 
 .container{
-  max-width:900px;
+  max-width:100%; /* Allows internal elements to control width */
   margin:0 auto;
   padding:40px 0 80px;
 }
 
 section{
-  margin-bottom:80px;
+  margin-bottom:120px;
   opacity:0;
   transform:translateY(30px);
   transition:opacity 1s ease,transform 1s ease;
@@ -68,41 +69,48 @@ section.visible{
   transform:translateY(0);
 }
 
+/* Fixed Centering: margin 0 auto ensures these blocks sit in the center */
 h1{
   font-size:48px;
   font-weight:800;
   letter-spacing:-.03em;
-  margin-bottom:40px;
+  margin:0 auto 40px;
   line-height:1.1;
+  max-width:720px;
+  text-align:left; 
 }
 
 h2{
   font-size:32px;
   font-weight:700;
   letter-spacing:-.02em;
-  margin-bottom:32px;
+  margin:0 auto 32px;
+  max-width:720px;
+  text-align:left;
 }
 
 p{
-  margin-bottom:24px;
+  margin:0 auto 24px;
   font-size:17px;
   max-width:720px;
+  text-align:left;
 }
 
 .divider{
   height:1px;
   background:currentColor;
   opacity:.2;
-  margin:60px 0;
+  margin:80px auto;
   max-width:200px;
 }
 
-.vulture-section{margin-top:60px}
+.vulture-section{margin-top:80px}
 
+/* Updated Footer: Aligns with the 720px grid */
 .footer{
-  max-width:900px;
+  max-width:720px;
   margin:0 auto;
-  padding:40px 0;
+  padding:60px 0;
   text-align:center;
   font-size:14px;
   font-weight:500;
@@ -112,11 +120,12 @@ p{
 .footer.dark{border-top:1px solid rgba(255,255,255,.1)}
 
 @media(max-width:768px){
-  .header{flex-direction:column;gap:16px;padding:20px}
-  .contact{flex-direction:column;gap:12px}
+  .header{flex-direction:column;gap:16px;padding:20px; max-width: 90%;}
+  .contact{flex-direction:column;gap:12px;text-align:center;}
   .container{padding:32px 24px 60px}
-  h1{font-size:36px}
-  h2{font-size:24px}
+  h1{font-size:36px; max-width: 100%;}
+  h2{font-size:24px; max-width: 100%;}
+  p{max-width: 100%;}
 }
 </style>
 </head>
@@ -128,8 +137,8 @@ p{
     <img alt="KIT55"
       src="data:image/svg+xml;utf8,
       <svg xmlns='http://www.w3.org/2000/svg' width='160' height='40'>
-        <rect width='160' height='40' fill='white'/>
-        <text x='0' y='30' font-size='28' font-family='Arial Black,Arial' fill='black'>KIT55</text>
+        <rect width='160' height='40' fill='rgba(255,255,255,0)'/>
+        <text x='2' y='30' font-size='28' font-family='Arial Black,Arial' fill='currentColor'>KIT55</text>
       </svg>">
   </div>
   <div class="contact">
@@ -387,18 +396,20 @@ that the idea of doing this right feels unrealistic?</p>
 <p>Or is that just what we tell ourselves<br>
 after living too long without a real alternative?</p>
 
-<img alt="55 — this passed" style="display:block;margin:80px auto 0;width:120px;opacity:.85"
+<div style="display:flex; justify-content:center; align-items:center; margin-top:80px;">
+<img alt="55 — this passed" style="width:120px;opacity:.85"
 src="data:image/svg+xml;utf8,
 <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'>
-<circle cx='100' cy='100' r='90' fill='none' stroke='black' stroke-width='12'/>
-<text x='50%' y='58%' text-anchor='middle' font-size='96' font-family='Arial Black,Arial' fill='black'>55</text>
+<circle cx='100' cy='100' r='90' fill='none' stroke='currentColor' stroke-width='12'/>
+<text x='50%' y='58%' text-anchor='middle' font-size='96' font-family='Arial Black,Arial' fill='currentColor'>55</text>
 </svg>">
+</div>
 </section>
 
 </div>
 
 <div class="footer">
-  <div class="contact">
+  <div class="contact" style="justify-content:center;">
     <a href="tel:+18587442700">+1 858 744 2700</a>
     <a href="mailto:welcome@mykit55.com">welcome@mykit55.com</a>
   </div>
