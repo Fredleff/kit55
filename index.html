@@ -1,194 +1,527 @@
-The full code is below. The seal's 2MB base64 can't be pasted in chat — use the downloaded file for that. Everything else is here, ready to drop into GitHub.
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KIT55 | Truth. Accountability.</title>
-  <meta name="description" content="KIT55: Supply chain infrastructure for projects that open cleanly. Truth and accountability, end to end.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <title>KIT55 | The Manifesto</title>
+  <meta name="description" content="Your departments aren't incompetent. They're telling the truth according to metrics that contradict each other. We tear down the walls.">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.65; color: #111111; background: #ffffff; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.08); padding: 18px 40px; }
-    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .logo-mark { font-size: 26px; font-weight: 900; letter-spacing: -0.03em; color: #111111; line-height: 1; }
-    .contact-info { display: flex; gap: 32px; font-size: 13px; font-weight: 500; }
-    .contact-info a { color: #111111; text-decoration: none; transition: opacity 0.2s; }
-    .contact-info a:hover { opacity: 0.6; }
+    :root {
+      --bg-dark: #0f0f0f;
+      --bg-secondary: #1a1a1a;
+      --text-white: #ffffff;
+      --accent-burgundy: #8b3a3a;
+      --accent-rust: #a73a3a;
+      --text-gray: #999999;
+      --border-color: #2a2a2a;
+    }
 
-    main { padding-top: 70px; }
-    section { padding: 120px 40px; max-width: 900px; margin: 0 auto; }
-    section.dark { background: #111111; color: #ffffff; max-width: 100%; padding: 120px 40px; }
-    section.dark .inner { max-width: 900px; margin: 0 auto; }
-    section.alt { background: #f5f5f5; color: #111111; max-width: 100%; padding: 120px 40px; }
-    section.alt .inner { max-width: 900px; margin: 0 auto; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    h1 { font-size: 52px; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 40px; line-height: 1.1; }
-    h2 { font-size: 38px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 36px; line-height: 1.15; }
-    p { font-size: 18px; margin-bottom: 24px; font-weight: 400; line-height: 1.75; }
-    .divider { height: 1px; background: currentColor; opacity: 0.2; margin: 60px 0; max-width: 160px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-white);
+      line-height: 1.7;
+      letter-spacing: 0.3px;
+    }
 
-    .seal { position: fixed; bottom: 40px; right: 40px; width: 130px; height: 130px; transform: rotate(-15deg); z-index: 10; opacity: 0; transition: opacity 1s ease; pointer-events: none; }
-    .seal.visible { opacity: 1; }
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 15, 15, 0.98);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 24px 40px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-    .cta-section { text-align: center; padding: 80px 40px; max-width: 900px; margin: 0 auto; }
-    .cta-section h2 { margin-bottom: 32px; }
-    .contact-block { margin-top: 48px; display: flex; flex-direction: column; gap: 16px; align-items: center; }
-    .contact-block a { color: #111111; text-decoration: none; font-size: 18px; font-weight: 500; transition: opacity 0.2s; }
-    .contact-block a:hover { opacity: 0.6; }
+    .logo {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--text-white);
+      text-transform: uppercase;
+      tracking: tight;
+    }
 
-    .footer { padding: 40px; text-align: center; font-size: 13px; color: #666666; background: #fafafa; }
+    .nav-contact {
+      display: flex;
+      gap: 32px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-contact a {
+      color: var(--text-white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-contact a:hover {
+      color: var(--accent-rust);
+      border-bottom: 1px solid var(--accent-rust);
+    }
+
+    /* MAIN */
+    main {
+      padding-top: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 120px 40px;
+      border-bottom: 1px solid var(--border-color);
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    section:nth-child(1) { animation-delay: 0.1s; }
+    section:nth-child(2) { animation-delay: 0.2s; }
+    section:nth-child(3) { animation-delay: 0.3s; }
+    section:nth-child(4) { animation-delay: 0.4s; }
+    section:nth-child(5) { animation-delay: 0.5s; }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    section.hero {
+      padding: 160px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section.hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(139, 58, 58, 0.05) 0%, transparent 100%);
+      pointer-events: none;
+    }
+
+    section.hero .content {
+      position: relative;
+      z-index: 2;
+      max-width: 920px;
+    }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 32px;
+      letter-spacing: -1.5px;
+    }
+
+    .accent-text {
+      color: var(--accent-rust);
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--text-gray);
+      line-height: 1.8;
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+
+    /* MANIFESTO SECTIONS */
+    .manifesto-section {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .manifesto-section h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 48px;
+      letter-spacing: -1px;
+    }
+
+    .manifesto-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 28px;
+      color: var(--text-white);
+    }
+
+    .manifesto-section .emphasis {
+      color: var(--accent-rust);
+      font-weight: 600;
+    }
+
+    .manifesto-section .quote {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      line-height: 1.7;
+      color: var(--accent-rust);
+      margin: 48px 0;
+      padding: 32px 0;
+      border-top: 2px solid var(--accent-burgundy);
+      border-bottom: 2px solid var(--accent-burgundy);
+      font-weight: 600;
+    }
+
+    /* DIVIDER */
+    .divider {
+      height: 1px;
+      background: var(--border-color);
+      margin: 48px 0;
+      max-width: 200px;
+    }
+
+    /* SOLUTION SECTION */
+    section.solution {
+      background: var(--bg-secondary);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    section.solution > div:first-child {
+      padding-right: 40px;
+      border-right: 1px solid var(--border-color);
+    }
+
+    section.solution h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 32px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    section.solution p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      color: var(--text-gray);
+    }
+
+    /* CTA SECTION */
+    section.cta {
+      text-align: center;
+      padding: 160px 40px;
+      background: linear-gradient(135deg, rgba(139, 58, 58, 0.08) 0%, rgba(167, 58, 58, 0.04) 100%);
+      border-top: 2px solid var(--accent-burgundy);
+      border-bottom: 2px solid var(--accent-burgundy);
+    }
+
+    section.cta h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 52px;
+      line-height: 1.2;
+      margin-bottom: 48px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .cta-subtitle {
+      font-size: 20px;
+      color: var(--text-gray);
+      margin-bottom: 64px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .contact-methods {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-gray);
+      font-weight: 700;
+    }
+
+    .contact-link {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-link:hover {
+      color: var(--accent-rust);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 48px 40px;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      section.solution {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      section.solution > div:first-child {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 48px;
+      }
+    }
 
     @media (max-width: 768px) {
-      section { padding: 80px 24px; }
-      section.dark { padding: 80px 24px; }
-      section.alt { padding: 80px 24px; }
-      h1 { font-size: 36px; margin-bottom: 32px; }
-      h2 { font-size: 28px; margin-bottom: 28px; }
-      p { font-size: 16px; }
-      .nav { padding: 14px 24px; }
-      .nav-inner { flex-direction: column; gap: 16px; }
-      .contact-info { gap: 16px; flex-wrap: wrap; justify-content: center; }
-      .seal { width: 90px; height: 90px; bottom: 24px; right: 24px; }
-      .cta-section { padding: 60px 24px; }
+      h1 {
+        font-size: 40px;
+        margin-bottom: 24px;
+      }
+
+      section {
+        padding: 80px 24px;
+      }
+
+      section.hero {
+        padding: 120px 24px;
+        min-height: auto;
+      }
+
+      .manifesto-section h2 {
+        font-size: 32px;
+        margin-bottom: 32px;
+      }
+
+      section.cta h2 {
+        font-size: 36px;
+        margin-bottom: 32px;
+      }
+
+      nav {
+        padding: 18px 24px;
+      }
+
+      .nav-contact {
+        gap: 16px;
+        font-size: 11px;
+      }
+
+      .contact-methods {
+        gap: 24px;
+      }
+
+      .contact-link {
+        font-size: 16px;
+      }
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="logo-mark">KIT55</div>
-      <div class="contact-info">
-        <a href="tel:+18587442700">858-744-2700</a>
-        <a href="mailto:welcome@mykit55.com">welcome@mykit55.com</a>
-      </div>
+  <nav>
+    <div class="logo">KIT55</div>
+    <div class="nav-contact">
+      <a href="tel:+18587442700">858-744-2700</a>
+      <a href="mailto:welcome@mykit55.com">welcome@mykit55.com</a>
     </div>
   </nav>
 
   <main>
 
+    <!-- HERO -->
+    <section class="hero">
+      <div class="content">
+        <h1>Your departments aren't <span class="accent-text">incompetent.</span></h1>
+        <p class="hero-subtitle">They're telling the truth according to the metrics they're measured by. The problem is those truths contradict each other. And you're letting it happen because admitting it means you have to tear it all down.</p>
+        <p class="hero-subtitle" style="margin-bottom: 0; font-weight: 600; color: var(--text-white);">Guess what? You do.</p>
+      </div>
+    </section>
+
+    <!-- THE PROBLEM -->
     <section>
-      <h1>Your project is bleeding money you can't explain.</h1>
-      <p>That's not your team's fault.</p>
-      <p>That's the system they inherited.</p>
-      <div class="divider"></div>
-    </section>
+      <div class="manifesto-section">
+        <p style="font-weight: 600; margin-bottom: 32px;">When things go wrong, blame evaporates between phases instead of landing on anyone. Fragmentation is easier to manage than accountability. Have you ever actually calculated what that costs you every quarter?</p>
 
-    <section class="dark">
-      <div class="inner">
-        <h2>The world changed. The systems didn't.</h2>
-        <p>For decades, construction worked on a simple assumption: buy components, manage lead times, install them. Inefficient, but survivable. The margins absorbed the slop.</p>
-        <p>Those margins are gone.</p>
-        <p>Tariffs shift overnight. Ports stall without warning. Steel prices move on geopolitical sentences. Borders change the cost basis of everything sourced across them. Labor is tighter. Materials are 40 percent higher than pre-pandemic baseline. Interest rates make overruns unabsorbable.</p>
-        <p>And your organization is still operating on the same SOP it always has.</p>
-        <p>Design doesn't see what procurement is sourcing. Procurement doesn't know when the warehouse can receive. The warehouse doesn't know when the field is ready. The field doesn't know what was approved upstream. Everybody's doing their job. Nobody's job connects to anybody else's.</p>
-        <p>That's the system that's killing you.</p>
+        <p>Times changed and will continue to do so. SOPs can change as well. Ever thought of pivoting?</p>
+
+        <p>Here's the reality: Design doesn't see what procurement is sourcing. Procurement doesn't know when the warehouse can receive. The warehouse doesn't know when the field is ready. The field doesn't know what was approved upstream.</p>
+
+        <div class="quote">Nothing buries math like enough paper.</div>
+
+        <p>Do you actually have one profit and loss statement? Or do you have five—one for preconstruction, one for construction, one for operations, one for asset management, one for the holding company—all telling different stories about the same project?</p>
+
+        <p>Because that's how loss disappears. Procurement saves three percent. Construction absorbs the delay. Operations inherits the cost. Asset management reports it as market conditions.</p>
+
+        <p><span class="emphasis">Everyone is telling the truth. The system is lying.</span></p>
+
+        <p>And when you hand your investors a quarterly report, they see five different narratives about one disaster. They can't see that the real bleed is circular and ongoing.</p>
       </div>
     </section>
 
+    <!-- THE REVOLUTION -->
     <section>
-      <h2>Here's how it actually kills you.</h2>
-      <p>Design specifies a material with a 16-week lead time. Procurement sources it competitively. The factory is running three months behind. Nobody coordinated this. The material arrives late. The schedule compresses. Installation crews can't start. The GC absorbs the delay cost. The timeline shifts. Other trades can't begin. Subtrades lose productive hours. Labor costs spike. The opening date slips. Revenue is deferred. The pro forma opens a mile underwater.</p>
-      <p>That's one component.</p>
-      <p>Now multiply it across cabinetry, flooring, hardware, fixtures, finishes. Across 500 units or 300 rooms.</p>
-      <p>By the time anyone realizes what happened, the cost is scattered across a dozen line items nobody can trace back to a single decision. And nobody owns it because nobody was ever looking across departments.</p>
-      <p>This is why 98 percent of global construction projects suffer cost overruns. Not because people are incompetent. Because fragmented systems cannot hold shared reality under pressure.</p>
-      <p>McKinsey: 95 percent of construction data goes unused. Sitting in separate inboxes. Separate spreadsheets. Separate conversations. Costing the industry 28 percent average budget overruns.</p>
-      <p>Not because the data doesn't exist. Because it's trapped in silos. Because the person making the decision can't see what the person executing it is actually seeing.</p>
-    </section>
+      <div class="manifesto-section">
+        <h2>Tear down the walls.</h2>
+        <p style="color: var(--accent-rust); font-weight: 600; font-size: 18px; margin-bottom: 32px;">Yes, they're comfortable. That comfort is costing you everything.</p>
 
-    <section class="alt">
-      <div class="inner">
-        <h2>What we actually do.</h2>
-        <p>We are the connective tissue between your departments.</p>
-        <p>We do procurement. We handle logistics. We manage reorders and every dependency that comes attached to them. The difference is we do all of it while keeping every department locked to the same reality. That's not another layer of administration. That's the best supply chain partner your team never had.</p>
-        <p>You specify how you work. Your installation sequence. Your staging windows. Your dependencies. And we build the sourcing and logistics architecture around that reality&#8212;not around what's convenient to source.</p>
-        <p>Four countries. Two continents. You'd never know.</p>
-        <p>Your team doesn't need to know that and doesn't need to care. What they need to know is that it all lands at our US staging facility, where we kit it according to your wishes and can deploy it with a lead time of four days to any part of the lower forty eight. Your crews don't chase material. Material chases them.</p>
-        <p>But here's what changes: every department knows.</p>
-        <p>Shared visibility. Shared reality. No surprises baked in after the cost is already committed.</p>
+        <p>Stop measuring success against department KPIs. Stop pretending these phases are separate companies. Stop accepting fragmented P&Ls as normal.</p>
+
+        <p>The companies building right now aren't reorganizing. They're unifying their best people—procurement, construction, operations—under one mandate: <span class="emphasis">optimize for the end result, not the phase.</span></p>
+
+        <p>That's not a reorganization. That's a revolution.</p>
+
+        <p>Everything changes when procurement, construction, and operations stop optimizing locally and start optimizing for the same finish line. This is how the companies winning right now are building. Not because they're smarter. Because they stopped letting departments hide from each other.</p>
       </div>
     </section>
 
-    <section class="dark">
-      <div class="inner">
-        <h2>On redundancy and timing.</h2>
-        <p>Mistakes happen. They always do.</p>
-        <p>Not because we're careless. Because when this many hands touch a project&#8212;design, procurement, manufacturing, logistics, warehousing, installation&#8212;friction is built in. Material gets damaged in transit. A factory misses a deadline despite being solid. A spec changes mid-project and cascades. A tariff shifts overnight. Someone miscommunicates a detail.</p>
-        <p>These aren't failures of character. They're consequences of scale and volatility.</p>
-        <p>What separates us from everyone else isn't that we prevent every problem. It's how we handle the ones that slip through.</p>
-        <p>You don't hear about it from your GC. Not from your warehouse. Not from your field supervisor discovering it when installation stalls. You hear about it from us. First. Before the cost cascades. Before the problem metastasizes across departments.</p>
-        <p>We source from the best place for that component given current conditions. Not cheapest. Not traditional. The place that minimizes your actual risk.</p>
-        <p>When pressure rises&#8212;delayed shipment, quality issue, tariff shift, factory problem, damaged goods, spec change&#8212;we don't wait. We move. We communicate. We mitigate. We solve it. We own it until your project is whole.</p>
-        <p>That's not a promise. That's how we operate.</p>
-      </div>
-    </section>
+    <!-- THE SOLUTION -->
+    <section class="solution">
+      <div>
+        <h2>We don't ask for permission.</h2>
+        <p>We turn the walls into dust.</p>
 
-    <section>
-      <h2>What this requires from you.</h2>
-      <p>Clarity. Specificity. Truth.</p>
-      <p>Tell us how your teams actually install. What sequence matters. What risk you're carrying that you shouldn't be. What you're willing to accept and what you're not.</p>
-      <p>We don't need estimates or projections or optimism. We need the real picture.</p>
-      <p>And participation. This doesn't work if you hire us and disappear. It works if you treat us like a structural part of your operation. Communication. Honesty when something isn't working. Understanding that we move when you need us to move.</p>
-      <p>It's not onerous. It's just real.</p>
-    </section>
-
-    <section class="alt">
-      <div class="inner">
-        <h2>The actual outcome.</h2>
-        <p>Projects that open cleanly.</p>
-        <p>Not because everything went perfectly. Because when things didn't, everyone saw it at the same time. Bad news doesn't vanish here. It arrives earlier. Cleaner. With fewer fingerprints on it.</p>
-        <p>That changes how people work together.</p>
-        <p>Architects stop defending substitutions they never chose. Designers stop watching intent erode downstream. Project managers stop absorbing noise and translating blame. Procurement stops managing quiet risk transfer. General contractors stop walking into meetings with spin.</p>
-        <p>The work stops feeling adversarial. Because the system stops asking people to cover for what it can't explain.</p>
-        <p>And when that happens, people actually do better work.</p>
-      </div>
-    </section>
-
-    <section class="dark">
-      <div class="inner">
-        <h2>If you're still shopping on price.</h2>
-        <p>This won't work for you.</p>
-        <p>If you want the lowest number today and you're willing to absorb the correction tomorrow, we're not the fit.</p>
-        <p>If you want flexibility without accountability, we're not the fit.</p>
-        <p>If you believe your project should open cleanly because your team is excellent and your systems are sound, then we're exactly what you're looking for.</p>
-        <p>When you're ready to stand in front of the work without excuses&#8212;when you're ready to let expertise evolve faster than the world does&#8212;you know how to reach us.</p>
         <div class="divider"></div>
-        <p style="margin-top: 40px;">The infrastructure that keeps your project moving.</p>
-        <p>We wholeheartedly believe in truth and accountability.</p>
-        <p>That's what we do.</p>
+
+        <p>Your team might not need replacing. It needs unification. We procure for year three asset value. We deploy logistics without timeline bleed. We align planning, construction, and operations so early decisions don't become late disasters.</p>
+
+        <p>We take your best people and hold them accountable to one thing: the end result. No hiding. No blame evaporation. No fragmented P&Ls.</p>
+
+        <div class="quote" style="border: none; padding: 0; margin: 32px 0; color: var(--accent-rust); font-size: 18px;">One team. One outcome. One truth.</div>
+      </div>
+
+      <div>
+        <h2>We architect enterprise performance.</h2>
+        <p>From acquisition through asset outcomes. Procurement. Construction. Operations. All locked to one finish line.</p>
+
+        <div class="divider"></div>
+
+        <p>You don't have to tear it all down to work with us. If preconstruction is locked and you're hemorrhaging in construction, we enter there and fix forward. If you're mid-project and drowning, we stop the bleed and architect the rest. If you're starting fresh, we build it as one circle from land acquisition through asset performance and market launch.</p>
+
+        <p>We enter the circle wherever you are. We just make sure that once we're in, every decision ripples toward the same finish line. That's how you stop inheriting disasters and start preventing them.</p>
+
+        <div class="quote" style="border: none; padding: 0; margin: 32px 0; color: var(--accent-rust); font-size: 16px;">Forget the tags. We work with names and attitudes, not titles. Cohesion erases departmental divisions.</div>
       </div>
     </section>
 
-    <section class="cta-section">
-      <h2>If this resonates.</h2>
-      <p>The next project doesn't have to look like the last one.</p>
-      <div class="contact-block">
-        <a href="tel:+18587442700">858-744-2700</a>
-        <a href="mailto:welcome@mykit55.com">welcome@mykit55.com</a>
+    <!-- THE TRUTH -->
+    <section>
+      <div class="manifesto-section">
+        <h2>It works.</h2>
+
+        <p>Not because departments are better organized. Not because people try harder. But because when walls come down and one team thinks about one outcome from day one, fragmentation stops compounding.</p>
+
+        <p>The companies doing this aren't superhuman. They're just building differently. They start with GTM strategy locked in from acquisition. Every sourcing decision ripples backward to that finish line. Every timeline gets validated against that reality. Every cost gets evaluated for its full impact on ROI, NOI, CapEx.</p>
+
+        <p>By the time the project opens, nothing surprises your investors. The numbers match the model. The asset performs. The capital works.</p>
+
+        <p>It works because <span class="emphasis">you're not managing fragmentation. You're preventing it.</span></p>
+
+        <p>Your team opens the property knowing exactly what it costs, when it opens, and how it performs. No inherited disasters. No quarterly surprises. No P&Ls telling five different stories about one failure.</p>
+
+        <p>We're not building jacks of all trades. We're building operators who understand how the whole system works and actively participate in its success. Nobody ever became a better employee for staying trapped in a silo.</p>
+
+        <p>So here's the real question: Whether you're holding this asset for twenty years or selling it in five, the rules don't change. The asset you hold is worth what the planning decides. The asset you sell is worth what the execution proves. Same circle. Same outcome. Same truth.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2>When you're ready.</h2>
+      <p class="cta-subtitle">The next project doesn't have to bleed like the last one.</p>
+      <div class="contact-methods">
+        <div class="contact-item">
+          <span class="contact-label">Phone</span>
+          <a href="tel:+18587442700" class="contact-link">858-744-2700</a>
+        </div>
+        <div class="contact-item">
+          <span class="contact-label">Email</span>
+          <a href="mailto:welcome@mykit55.com" class="contact-link">welcome@mykit55.com</a>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <p>KIT55 &nbsp;|&nbsp; Truth. Accountability.</p>
+  <footer>
+    <p>KIT55 | Truth. Accountability.</p>
   </footer>
 
-  <!-- Seal image goes here — use the downloaded file which has the full base64 embedded -->
-  <img class="seal" src="truth_accountability_55_seal_embedded.svg" alt="KIT55 Truth Accountability Seal">
-
   <script>
-    const seal = document.querySelector(".seal");
-    window.addEventListener("scroll", function() {
-      var pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      if (pct > 20) { seal.classList.add("visible"); }
-      else { seal.classList.remove("visible"); }
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
     });
+
+    reveals.forEach(el => observer.observe(el));
   </script>
 
 </body>
